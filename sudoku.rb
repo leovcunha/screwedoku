@@ -17,6 +17,7 @@ class SudokuGame
   def retrieve_pos_from_ui
     p = nil
     until p && legal_illegibility_of_p?(p)
+      board.render
       puts "Please enter a position on the board (e.g., '3,4')"
       print "> "
 
@@ -35,6 +36,7 @@ class SudokuGame
   def retrieve_value_from_ui
     v = nil
     until v && legal_illegibility_of_v?(v)
+      board.render
       puts "Please enter a value between 1 and 9 (0 to clear the tile)"
       print "> "
       v = parse_insanity(gets.chomp)
